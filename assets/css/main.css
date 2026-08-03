@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+html {
+    background: #000 url(../media/backgrounds/Pokefind-Background.jpg) center center no-repeat;
+    background-size: cover;
+    color: white
+}
+
+body {
+    display: flex;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+.logo-wrapper {
+    padding: 4rem 2rem 0.2rem;
+    width: max-content;
+    margin: 0 auto;
+}
+
+.logo-wrapper img {
+    height: 184px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* color: #a3d39c; */
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    margin: auto;
+    padding: 40px 10%;
+    justify-content: center;
+    align-items: start;
+}
+
+.link .mobile-link {
+    display: none;
+    background: #222;
+    padding: 15px 35px;
+    margin: 15px;
+    color: #eee;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.2s ease;
+    border: none;
+    text-align: center;
+}
+
+@media screen and (max-height: 700px) {
+    .logo-wrapper img {
+        height: 130px;
+    }
+    body {
+        overflow: auto;
+    }
+
+    .logo-wrapper {
+        padding-top: 20px;
+    }
+
+}
+
+/* Add a media query for screens smaller than 800px and portrait orientation */
+@media screen and (max-width: 800px) {
+    .link .mobile-link {
+        display: grid;
+    }
+
+    .link img {
+        display: none;
+    }
+
+    h1 {
+        margin-bottom: 0px;
+    }
+
+    .logo-wrapper {
+        padding: 0rem 2rem 0.2rem;
+    }
+
+    .links {
+        display: grid;
+    }
+}
+
+
+.link {
+    transition: 0.9s;
+    transform-style: preserve-3d;
+    position: relative;
+    cursor: pointer;
+}
+
+.link .front {
+    position: absolute;
+    height: 100%;
+    width: auto;
+}
+
+.link .back {
+    height: 100%;
+    width: 100%;
+}
+
+.link img {
+    max-width: 100%;
+    object-fit: contain;
+    object-position: top center;
+}
