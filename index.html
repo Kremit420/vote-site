@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vote for PokeFind</title>
+<meta name="description" content="Vote for PokeFind and earn Wish Dust, coins, tokens and rewards in game.">
+<style>
+  :root {
+    --bg: #0e1116;
+    --card: #171c24;
+    --card-hover: #1e2530;
+    --line: #2a323f;
+    --text: #e8edf4;
+    --muted: #8b96a6;
+    --accent: #ffe590;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 2.5rem 1.25rem 3rem;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  .wrap { width: 100%; max-width: 32rem; }
+  header { text-align: center; margin-bottom: 2rem; }
+  h1 { margin: 0 0 .5rem; font-size: 1.75rem; letter-spacing: -.02em; }
+  h1 span { color: var(--accent); }
+  header p { margin: 0; color: var(--muted); font-size: .95rem; }
+
+  a.site {
+    display: flex;
+    align-items: center;
+    gap: .9rem;
+    padding: .95rem 1.1rem;
+    margin-bottom: .6rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: .6rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: background .15s, border-color .15s, transform .15s;
+  }
+  a.site:hover, a.site:focus-visible {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    outline: none;
+  }
+  .num {
+    flex: 0 0 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    background: #0b0e13;
+    border: 1px solid var(--line);
+    border-radius: .4rem;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: .9rem;
+  }
+  .name { flex: 1; font-weight: 500; word-break: break-word; }
+  .go { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+
+  .note {
+    margin-top: 1.75rem;
+    padding: .9rem 1.1rem;
+    border-left: 2px solid var(--accent);
+    background: #141922;
+    border-radius: 0 .4rem .4rem 0;
+    color: var(--muted);
+    font-size: .875rem;
+  }
+  footer { margin-top: 1.5rem; text-align: center; color: var(--muted); font-size: .8rem; }
+  footer a { color: var(--muted); }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f4f6f9; --card: #fff; --card-hover: #fbfcfe; --line: #dde3ea;
+      --text: #1b222c; --muted: #5d6875; --accent: #b8860b;
+    }
+    .num { background: #f4f6f9; }
+    .note { background: #fff; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Vote for <span>PokeFind</span></h1>
+    <p>Vote on each site once every 24 hours to earn Wish Dust and rewards in game.</p>
+  </header>
+
+  <!-- ==========================================================================
+       EDIT YOUR VOTE LINKS HERE.
+       Add, remove or change an entry by editing the block below.
+       Keep the numbers sequential. Nothing else on the page needs touching.
+
+       IMPORTANT: these are the Java vote sites. The Bedrock page is separate
+       (votebedrock.pokefind.co) and has a different list - it drops TopG.org
+       and adds MinecraftPocket-Servers.com.
+       ========================================================================== -->
+
+  <a class="site" href="https://minecraftservers.org/vote/419046" target="_blank" rel="noopener">
+    <span class="num">1</span><span class="name">MinecraftServers.org</span><span class="go">Vote &rarr;</span>
+  </a>
+
+  <a class="site" href="https://minecraft-server-list.com/server/388953/vote/" target="_blank" rel="noopener">
+    <span class="num">2</span><span class="name">Minecraft-Server-List.com</span><span class="go">Vote &rarr;</span>
+  </a>
+
+  <a class="site" href="https://minecraft-server.net/vote/Pokefind/" target="_blank" rel="noopener">
+    <span class="num">3</span><span class="name">Minecraft-Server.net</span><span class="go">Vote &rarr;</span>
+  </a>
+
+  <a class="site" href="https://servers-minecraft.net/server-pokefind.24962" target="_blank" rel="noopener">
+    <span class="num">4</span><span class="name">Servers-Minecraft.net</span><span class="go">Vote &rarr;</span>
+  </a>
+
+  <a class="site" href="https://topg.org/minecraft-servers/server-454645" target="_blank" rel="noopener">
+    <span class="num">5</span><span class="name">TopG.org</span><span class="go">Vote &rarr;</span>
+  </a>
+
+  <!-- ====================== END OF VOTE LINKS ================================= -->
+
+  <p class="note">
+    Vote on <strong>all five</strong> sites within the same day to earn a Bonus Reward,
+    claimable in game with <strong>/vote</strong>.
+  </p>
+
+  <footer>
+    Playing on Bedrock? Use <a href="https://votebedrock.pokefind.co">votebedrock.pokefind.co</a>
+  </footer>
+
+</div>
+</body>
+</html>
