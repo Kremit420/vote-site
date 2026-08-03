@@ -245,3 +245,77 @@ h1 small {
     .links { grid-template-columns: 1fr; }
     .link:nth-child(5) { width: 100%; }
 }
+
+
+/* ============================================================================
+   CARD SIZING FIX (pre-existing bug, present on the original Firebase page too)
+
+   .link had no resolvable height, but its children asked for one:
+       .link .front { position: absolute; height: 100%; }
+       .link .back  { height: 100%; width: 100%; }
+   A percentage height against an auto-height parent is indefinite, so it fell
+   back to the image's natural size (723x1047). One card would render full-size
+   and blow out the flex row - and once flipped, that oversized box swung across
+   the whole page.
+
+   Giving .link a definite width plus aspect-ratio makes its height definite, so
+   both faces resolve against it correctly.
+   ========================================================================== */
+
+.links {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem 5% 1.5rem;
+}
+
+.link {
+    flex: 0 0 auto;
+    width: clamp(110px, 13vw, 185px);
+    aspect-ratio: 723 / 1047;   /* the card artwork's true ratio */
+}
+
+.link .front {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.link .back {
+    width: 100%;
+    height: 100%;
+}
+
+.link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Mobile shows the cards as a flowing grid rather than fixed-width flex items,
+   so the desktop sizing above has to be unwound. */
+@media screen and (max-width: 800px) {
+    .links { flex-wrap: nowrap; padding: 1.25rem 1rem 1.75rem; }
+
+    .link {
+        width: auto;
+        aspect-ratio: auto;
+    }
+
+    .link .front {
+        position: static;
+        inset: auto;
+        height: auto;
+    }
+
+    .link img { height: auto; }
+
+    .link:nth-child(5) {
+        width: calc(50% - .5rem);
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .link:nth-child(5) { width: 100%; }
+}
