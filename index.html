@@ -6,6 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PokeFind - Voting Site</title>
+    <meta name="description" content="Vote for PokeFind on all five server lists every 24 hours to earn Wish Dust, and a Bonus Reward for completing the full set.">
+
+    <!-- Link preview (Discord, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="PokeFind">
+    <meta property="og:title" content="Vote for PokeFind">
+    <meta property="og:description" content="Vote for PokeFind on all five server lists every 24 hours to earn Wish Dust, and a Bonus Reward for completing the full set.">
+    <meta property="og:url" content="https://vote.pokefind.co/">
+    <meta property="og:image" content="https://vote.pokefind.co/assets/media/logo.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="#000000">
+
     <link rel="icon" href="./assets/media/favicon.ico" type="image/x-icon">
 
     <!-- Fonts -->
@@ -27,7 +39,8 @@
 <div class="filter-bg-2">&nbsp;</div> -->
     <h1 class="heading">
         PokeFind<br>
-        <small>Click on these cards to go to the voting sites.</small>
+        <small>Vote on every site once a day to earn <b>Wish Dust</b> &mdash; complete all five
+            for a <b>Bonus Reward</b>. Claim them in game with <b>/vote</b>.</small>
     </h1>
 
     <div class="links">
@@ -36,10 +49,10 @@
                 MinecraftServers.org
             </a>
             <div class="front">
-                <img src="./assets/media/cards/front_1.png" data-id="1">
+                <img src="./assets/media/cards/front_1.png" data-id="1" alt="Vote on MinecraftServers.org">
             </div>
             <div class="back">
-                <img src="./assets/media/cards/back_1.webp" data-id="1">
+                <img src="./assets/media/cards/back_1.webp" data-id="1" alt="MinecraftServers.org card back">
             </div>
         </div>
         <div class="link" data-url="https://minecraft-server-list.com/server/388953/vote/">
@@ -47,10 +60,10 @@
                 Minecraft-server-list.com
             </a>
             <div class="front">
-                <img src="./assets/media/cards/front_2.png" data-id="2" alt="TODO">
+                <img src="./assets/media/cards/front_2.png" data-id="2" alt="Vote on Minecraft-Server-List.com">
             </div>
             <div class="back">
-                <img src="./assets/media/cards/back_2.webp" data-id="2" alt="TODO">
+                <img src="./assets/media/cards/back_2.webp" data-id="2" alt="Minecraft-Server-List.com card back">
             </div>
         </div>
         <div class="link" data-url="https://minecraft-mp.com/server/334713/vote/">
@@ -58,10 +71,10 @@
                 Minecraft-mp.com
             </a>
             <div class="front">
-                <img src="./assets/media/cards/front_3.png" data-id="3" alt="TODO">
+                <img src="./assets/media/cards/front_3.png" data-id="3" alt="Vote on Minecraft-MP.com">
             </div>
             <div class="back">
-                <img src="./assets/media/cards/back_3.webp" data-id="3" alt="TODO">
+                <img src="./assets/media/cards/back_3.webp" data-id="3" alt="Minecraft-MP.com card back">
             </div>
         </div>
         <div class="link" data-url="https://servers-minecraft.net/server-pokefind.24962">
@@ -69,10 +82,10 @@
                 Servers-minecraft.net
             </a>
             <div class="front">
-                <img src="./assets/media/cards/front_4.png" data-id="4" alt="TODO">
+                <img src="./assets/media/cards/front_4.png" data-id="4" alt="Vote on Servers-Minecraft.net">
             </div>
             <div class="back">
-                <img src="./assets/media/cards/back_4.webp" data-id="4" alt="TODO">
+                <img src="./assets/media/cards/back_4.webp" data-id="4" alt="Servers-Minecraft.net card back">
             </div>
         </div>
         <div class="link" data-url="https://topg.org/minecraft-servers/server-454645">
@@ -80,13 +93,24 @@
                 TopG.org
             </a>
             <div class="front">
-                <img src="./assets/media/cards/front_5.png" data-id="5" alt="TODO">
+                <img src="./assets/media/cards/front_5.png" data-id="5" alt="Vote on TopG.org">
             </div>
             <div class="back">
-                <img src="./assets/media/cards/back_5.webp" data-id="5" alt="TODO">
+                <img src="./assets/media/cards/back_5.webp" data-id="5" alt="TopG.org card back">
             </div>
         </div>
     </div>
+
+    <nav class="site-nav">
+        <a href="https://www.pokefind.wiki" target="_blank" rel="noopener">Wiki</a>
+        <a href="https://discord.gg/pokefind" target="_blank" rel="noopener">Discord</a>
+        <a href="https://store.pokefind.co" target="_blank" rel="noopener">Store</a>
+    </nav>
+
+    <p class="platform-note">
+        Playing on Bedrock? Vote at
+        <a href="https://votebedrock.pokefind.co">votebedrock.pokefind.co</a>
+    </p>
 
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"

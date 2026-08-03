@@ -129,3 +129,119 @@ h1 {
     object-fit: contain;
     object-position: top center;
 }
+
+/* ============================================================================
+   2026 update. Appended rather than edited inline so the original rules above
+   stay readable and diffable - everything here overrides by cascade order.
+   ========================================================================== */
+
+/* The page was overflow:hidden, so anything that didn't fit was unreachable.
+   With a nav row added there is now content below the cards on short screens. */
+html, body { overflow: auto; }
+
+body { min-height: 100vh; }
+
+.site-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+    padding: 0 1rem 1.25rem;
+}
+
+.site-nav a {
+    padding: .55rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, .35);
+    border-radius: 2rem;
+    background: rgba(0, 0, 0, .45);
+    color: #fff;
+    font-weight: 500;
+    font-size: .9rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: background .15s, border-color .15s, transform .15s;
+}
+
+.site-nav a:hover, .site-nav a:focus-visible {
+    background: rgba(255, 255, 255, .15);
+    border-color: #fff;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.platform-note {
+    padding: 0 1rem 1.5rem;
+    text-align: center;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .6);
+}
+
+.platform-note a { color: rgba(255, 255, 255, .9); }
+
+h1 small {
+    display: block;
+    max-width: 34rem;
+    margin: .6rem auto 0;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: none;
+    color: rgba(255, 255, 255, .85);
+}
+
+/* ---------------------------------------------------------------------------
+   MOBILE: previously `.link img { display: none }` hid every card below 800px
+   and left five flat grey text buttons - so phone users, who are most of the
+   traffic, never saw the artwork at all (while still downloading ~3.5MB of it).
+   Cards are shown as a tappable grid instead. The flip is disabled on touch in
+   app.js, so a tap navigates rather than flipping and navigating at once.
+   ------------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    .links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        padding: 1.25rem 1rem 1.75rem;
+        align-items: start;
+    }
+
+    .link { transform: none !important; transform-style: flat; }
+
+    /* .front was absolutely positioned for the 3D flip; let it flow instead. */
+    .link .front { position: static; height: auto; width: 100%; }
+    .link .back { display: none; }
+
+    .link img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: .5rem;
+    }
+
+    /* Fifth card would sit alone in a 2-up grid; centre it. */
+    .link:nth-child(5) {
+        grid-column: 1 / -1;
+        width: calc(50% - .5rem);
+        margin: 0 auto;
+    }
+
+    .link .mobile-link {
+        display: block;
+        margin: .5rem 0 0;
+        padding: .5rem .4rem;
+        font-size: .72rem;
+        border-radius: .35rem;
+        background: rgba(0, 0, 0, .55);
+        border: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    .logo-wrapper img { height: 110px; }
+    h1 { font-size: 1.15rem; }
+}
+
+@media screen and (max-width: 420px) {
+    .links { grid-template-columns: 1fr; }
+    .link:nth-child(5) { width: 100%; }
+}

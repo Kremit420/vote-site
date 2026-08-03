@@ -9,9 +9,14 @@ $('.link').hover(
     }
 );
 $(document).ready(function () {
-    $(".link").flip({
-        trigger: 'click'
-    });
+    // Only flip on desktop. Below 800px the cards are a plain tappable grid
+    // (see main.css) - initialising flip there would make one tap both flip the
+    // card and open the vote site, and the plugin's wrapper fights the grid.
+    if (window.matchMedia('(min-width: 801px)').matches) {
+        $(".link").flip({
+            trigger: 'click'
+        });
+    }
     $(".link").click(function (e) {
         e.preventDefault();
         const url = $(this).data('url');
